@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="app">
+        <header class="page-header">
+            <p class="eyebrow">MY WORKSPACE</p>
+            <h1>Task Manager</h1>
+            <p class="subtitle">A little progress each day adds up.</p>
+        </header>
+
+        <section class="summary" aria-label="Task summary">
+            <article class="summary-card">
+                <span class="summary-label">All tasks</span>
+                <strong id="total-count">0</strong>
+            </article>
+            <article class="summary-card">
+                <span class="summary-label">Pending</span>
+                <strong id="pending-count">0</strong>
+            </article>
+            <article class="summary-card">
+                <span class="summary-label">Completed</span>
+                <strong id="completed-count">0</strong>
+            </article>
+        </section>
+
+        <section class="panel">
+            <h2 id="form-heading">Add a new task</h2>
+            <form id="task-form">
+                <label for="task-input">Task name</label>
+                <div class="form-row">
+                    <input
+                        id="task-input"
+                        type="text"
+                        placeholder="e.g. Finish internship assignment"
+                        maxlength="120"
+                        autocomplete="off"
+                        required
+                    >
+                    <button id="submit-button" type="submit">Add task</button>
+                </div>
+                <button id="cancel-edit" class="text-button hidden" type="button">
+                    Cancel editing
+                </button>
+            </form>
+        </section>
+
+        <section class="task-section">
+            <div class="list-heading">
+                <h2>Your tasks</h2>
+                <label class="filter-label" for="task-filter">
+                    Show
+                    <select id="task-filter">
+                        <option value="all">All tasks</option>
+                        <option value="pending">Pending</option>
+                        <option value="completed">Completed</option>
+                    </select>
+                </label>
+            </div>
+
+            <ul id="task-list" class="task-list"></ul>
+            <p id="empty-message" class="empty-message">
+                No tasks yet. Add your first task above!
+            </p>
+        </section>
+
+        <footer class="footer">
+            Your tasks are saved in this browser using localStorage.
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
